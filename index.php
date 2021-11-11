@@ -20,10 +20,10 @@
     $pdo = new Conexion();
     //Metodo obtener
     if($_SERVER['REQUEST_METHOD']== 'GET'){
-        if(isset($_GET['id']))
+        if(isset($_GET['Dataid']))
         {
-            $sql=$pdo->prepare("SELECT * FROM datainde WHERE Dataid=:id");
-            $sql->bindValue(':id',$_GET['id']);
+            $sql=$pdo->prepare("SELECT * FROM datainde WHERE Dataid=:Dataid");
+            $sql->bindValue(':Dataid',$_GET['Dataid']);
             $sql->execute();
             $sql->setFetchMode(PDO::FETCH_ASSOC);
             header("HTTP/1.1 200 OK");
