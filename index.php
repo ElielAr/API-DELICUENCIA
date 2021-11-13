@@ -22,7 +22,7 @@
     if($_SERVER['REQUEST_METHOD']== 'GET'){
         if(isset($_GET['id']))
         {
-            $sql=$pdo->prepare("SELECT * FROM datainde WHERE Correo=:id");
+            $sql=$pdo->prepare("SELECT * FROM datainde WHERE Dataid=:id");
             $sql->bindValue(':id',$_GET['id']);
             $sql->execute();
             $sql->setFetchMode(PDO::FETCH_ASSOC);
